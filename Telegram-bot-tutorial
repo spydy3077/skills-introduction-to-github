@@ -1,0 +1,9 @@
+import requests
+
+BOT_TOKEN = "8279745902:AAHyG5B4XYnxK43loM7qzAX_fLGmTdLtWBM"
+API_URL = f"https://api.telegram.org/bot{BOT_TOKEN}/"
+
+def send_message(chat_id, text):
+    url = API_URL + "sendMessage"
+    data = {"chat_id": chat_id, "text": text}
+    requests.post(url, data=data)
